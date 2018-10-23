@@ -5,6 +5,7 @@ import javafx.scene.control.TableView;
 
 public class MainController {
 
+    private int turnNr;
     public Spinner<Integer> num1;
     public Spinner<Integer> num2;
     public Spinner<Integer> num3;
@@ -16,6 +17,7 @@ public class MainController {
     }
 
     public void go () {
+        turnNr++;
         int n1 = num1.getValue();
         int n2 = num2.getValue();
         int n3 = num3.getValue();
@@ -24,6 +26,7 @@ public class MainController {
 
         Turn turn = new Turn();
         turn.setGuess("" + n1 + n2 +n3 + n4);
+        turn.setTurnNr(turnNr);
 
         turns.getItems().add(turn);
     }
